@@ -25,7 +25,7 @@ var server = http.createServer(function (req, res) {
 
                 //下面是拼一个html页面出来
                 var addStr = '<link rel="stylesheet" href="public/css/index.css"/>';
-                addStr += '<h1>FileManager system directory</h1>';
+                addStr += '<h1>静态资源服务器</h1>';
                 addStr += '<ul>';
 
                 //遍历读文件
@@ -43,7 +43,7 @@ var server = http.createServer(function (req, res) {
                             }
                         })
                     }
-                    res.end(addStr + "</ul><p>提示：以上目录列表，蓝色是文件夹，可点击继续进入</p>");
+                    res.end(addStr + "</ul><p>提示：以上目录列表，蓝色是文件夹，可点击继续进入文件夹</p>");
                 });
             } else if (fs.statSync(filepath).isFile()) {
                 //当访问的是文件时，判断文件类型，并读文件
